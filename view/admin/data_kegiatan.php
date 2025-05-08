@@ -19,57 +19,59 @@
 <body>
 
 <?php include '../../components/admin/header.php'; ?>
-<?php include '../../components/admin/sidebar.php'; ?>
 
-<!-- Content -->
-<div class="container mt-4">
-  <div class="title">Data Kegiatan</div>
+<main>
 
-  <!-- Search and Add Button -->
-  <div class="d-flex justify-content-between mb-3">
-    <input type="text" class="form-control w-25" placeholder="Cari Data Kegiatan">
-    <button class="btn btn-primary">+ Tambah Data</button>
-  </div>
-
-  <?php
-    $data = [
-      ["statistik sosial", "Susenas", "Listing dan pendataan lapang"],
-      ["IPDS", "Susenas", "Pengolahan Data"],
-      ["", "", ""],
-      ["", "", ""],
-      ["", "", ""],
-      ["", "", ""],
-    ];
-  ?>
-
-  <!-- Table -->
-  <table class="table table-bordered text-center">
-    <thead>
-      <tr>
-        <th>No.</th>
-        <th>Teknis</th>
-        <th>Survei</th>
-        <th>Kegiatan</th>
-        <th>Aksi</th>
-      </tr>
-    </thead>
-    <tbody>
-      <?php foreach ($data as $index => $row): ?>
+  <!-- Content -->
+  <div class="container mt-4">
+    <div class="title">Data Kegiatan</div>
+  
+    <!-- Search and Add Button -->
+    <div class="d-flex justify-content-between mb-3">
+      <input type="text" class="form-control w-25" placeholder="Cari Data Kegiatan">
+      <button class="btn btn-primary">+ Tambah Data</button>
+    </div>
+  
+    <?php
+      $data = [
+        ["statistik sosial", "Susenas", "Listing dan pendataan lapang"],
+        ["IPDS", "Susenas", "Pengolahan Data"],
+        ["", "", ""],
+        ["", "", ""],
+        ["", "", ""],
+        ["", "", ""],
+      ];
+    ?>
+  
+    <!-- Table -->
+    <table class="table table-bordered text-center">
+      <thead>
         <tr>
-          <td><?= $index + 1 ?>.</td>
-          <td><?= $row[0] ?></td>
-          <td><?= $row[1] ?></td>
-          <td><?= $row[2] ?></td>
-          <td>
-            <button class="icon-btn icon-view"><i class="bi bi-eye-fill"></i></button>
-            <button class="icon-btn icon-add"><i class="bi bi-plus-circle-fill"></i></button>
-            <button class="icon-btn icon-delete"><i class="bi bi-trash-fill"></i></button>
-          </td>
+          <th>No.</th>
+          <th>Teknis</th>
+          <th>Survei</th>
+          <th>Kegiatan</th>
+          <th>Aksi</th>
         </tr>
-      <?php endforeach; ?>
-    </tbody>
-  </table>
-</div>
+      </thead>
+      <tbody>
+        <?php foreach ($data as $index => $row): ?>
+          <tr>
+            <td><?= $index + 1 ?>.</td>
+            <td><?= $row[0] ?></td>
+            <td><?= $row[1] ?></td>
+            <td><?= $row[2] ?></td>
+            <td>
+              <button class="icon-btn icon-view"><i class="bi bi-eye-fill"></i></button>
+              <button class="icon-btn icon-add"><i class="bi bi-plus-circle-fill"></i></button>
+              <button class="icon-btn icon-delete"><i class="bi bi-trash-fill"></i></button>
+            </td>
+          </tr>
+        <?php endforeach; ?>
+      </tbody>
+    </table>
+  </div>
+</main>
 
 <?php include '../../components/admin/footer.php'; ?>
 

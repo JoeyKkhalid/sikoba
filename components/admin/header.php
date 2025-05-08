@@ -6,6 +6,11 @@ $role_user = "Admin";
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
+
+  body::-webkit-scrollbar {
+      display: none;
+  }
+
   header {
     background: linear-gradient(to right, #1f2b6c, #2e4aad);
     color: white;
@@ -45,7 +50,7 @@ $role_user = "Admin";
     margin-right: 50px;
     text-align: end;
   }
-  
+
   .right-header .user {
     font-size: 16px;
   }
@@ -186,6 +191,10 @@ $role_user = "Admin";
     max-width: 20px;
     margin-right: 20px;
   }
+
+  aside::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
 </style>
 
 <header>

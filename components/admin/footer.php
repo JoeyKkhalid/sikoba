@@ -19,4 +19,21 @@
 .site-footer p {
     margin: 0;
 }
+
+/* Menjamin halaman mengisi seluruh tinggi */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: grid;
+}
+
+/* Grid utama */
+body {
+    grid-template-rows: 1fr auto; /* 1fr untuk konten, auto untuk footer */
+}
+
+/* Footer tetap berada di bawah halaman */
+footer {
+    grid-row: 2; /* Letakkan footer di baris kedua (terakhir) */
+}
 </style>

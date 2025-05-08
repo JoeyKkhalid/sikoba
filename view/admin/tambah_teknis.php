@@ -35,20 +35,21 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <body>
 
 <?php include '../../components/admin/header.php'; ?>
-<?php include '../../components/admin/sidebar.php'; ?>
 
-<div class="container">
-  <h2>Tambah Data Teknis</h2>
-  <form method="post">
-    <label for="nama_teknis">Nama Teknis</label>
-    <input type="text" id="nama_teknis" name="nama_teknis" required>
-
-    <label for="kode_teknis">Kode Teknis</label>
-    <input type="text" id="kode_teknis" name="kode_teknis" required>
-
-    <button type="submit">Simpan</button>
-  </form>
-</div>
+<main>
+  <div class="container">
+    <h2>Tambah Data Teknis</h2>
+    <form method="post">
+      <label for="nama_teknis">Nama Teknis</label>
+      <input type="text" id="nama_teknis" name="nama_teknis" required>
+  
+      <label for="kode_teknis">Kode Teknis</label>
+      <input type="text" id="kode_teknis" name="kode_teknis" required>
+  
+      <button type="submit">Simpan</button>
+    </form>
+  </div>
+</main>
 
 <?php include '../../components/admin/footer.php'; ?>
 

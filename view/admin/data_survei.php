@@ -19,29 +19,6 @@ $surveys = [
             background: #f2f2f2;
         }
 
-        .navbar {
-            background-color: #2d337b;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 10px 30px;
-        }
-
-        .navbar .logo {
-            font-weight: bold;
-            font-size: 18px;
-        }
-
-        .navbar .user {
-            display: flex;
-            align-items: center;
-        }
-
-        .navbar .user span {
-            margin-left: 10px;
-        }
-
         .content {
             background: white;
             margin: 30px auto;
@@ -110,46 +87,48 @@ $surveys = [
 <body>
 
 <?php include '../../components/admin/header.php'; ?>
-<?php include '../../components/admin/sidebar.php'; ?>
 
-<div class="content">
-    <h2>Data Survei</h2>
+<main>
 
-    <div class="controls">
-        <div>
-            <label for="tampil">Tampil Data</label>
-            <select id="tampil" name="tampil">
-                <option>10</option>
-                <option>25</option>
-                <option>50</option>
-            </select>
+    <div class="content">
+        <h2>Data Survei</h2>
+    
+        <div class="controls">
+            <div>
+                <label for="tampil">Tampil Data</label>
+                <select id="tampil" name="tampil">
+                    <option>10</option>
+                    <option>25</option>
+                    <option>50</option>
+                </select>
+            </div>
+            <button class="btn-primary">+ Tambah Data</button>
         </div>
-        <button class="btn-primary">+ Tambah Data</button>
-    </div>
-
-    <table>
-        <tr>
-            <th style="width: 5%;">No.</th>
-            <th>Nama Survei</th>
-            <th style="width: 20%;">Aksi</th>
-        </tr>
-        <?php for ($i = 0; $i < 7; $i++): ?>
+    
+        <table>
             <tr>
-                <td><?= $i + 1 ?>.</td>
-                <td>
-                    <?= isset($surveys[$i]) ? $surveys[$i]['nama'] : '' ?>
-                </td>
-                <td class="actions">
-                    <?php if (isset($surveys[$i])): ?>
-                        <i class="fas fa-edit icon-edit" title="Edit"></i>
-                        <i class="fas fa-trash icon-delete" title="Hapus"></i>
-                        <i class="fas fa-file-alt icon-file" title="Lihat File"></i>
-                    <?php endif; ?>
-                </td>
+                <th style="width: 5%;">No.</th>
+                <th>Nama Survei</th>
+                <th style="width: 20%;">Aksi</th>
             </tr>
-        <?php endfor; ?>
-    </table>
-</div>
+            <?php for ($i = 0; $i < 7; $i++): ?>
+                <tr>
+                    <td><?= $i + 1 ?>.</td>
+                    <td>
+                        <?= isset($surveys[$i]) ? $surveys[$i]['nama'] : '' ?>
+                    </td>
+                    <td class="actions">
+                        <?php if (isset($surveys[$i])): ?>
+                            <i class="fas fa-edit icon-edit" title="Edit"></i>
+                            <i class="fas fa-trash icon-delete" title="Hapus"></i>
+                            <i class="fas fa-file-alt icon-file" title="Lihat File"></i>
+                        <?php endif; ?>
+                    </td>
+                </tr>
+            <?php endfor; ?>
+        </table>
+    </div>
+</main>
 
 <?php include '../../components/admin/footer.php'; ?>
 
