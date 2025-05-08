@@ -43,7 +43,9 @@ $role_user = "Admin";
 
   .right-header{
     margin-right: 50px;
+    text-align: end;
   }
+  
   .right-header .user {
     font-size: 16px;
   }
@@ -131,7 +133,7 @@ $role_user = "Admin";
   .submenu {
     display: none;
     margin-top: 10px;
-    padding-left: 20px;
+    padding-left: 28px;
     background: #2e3b9c;
     border-left: 2px solid white;
   }
@@ -179,6 +181,11 @@ $role_user = "Admin";
   main.shifted {
     margin-left: 290px;
   }
+
+  .icon-sidebar{
+    max-width: 20px;
+    margin-right: 20px;
+  }
 </style>
 
 <header>
@@ -196,7 +203,7 @@ $role_user = "Admin";
   </div>
   <div class="right-header">
     <div class="user">
-      <i class="fas fa-user-circle"></i> Hello, <strong><?= $nama_user ?></strong><br>
+      <i class="fas fa-user-circle"></i> Hello, <?= $nama_user ?><br>
       <span class="role-info">Anda Login Sebagai <?= $role_user ?></span>
     </div>
   </div>
@@ -204,20 +211,20 @@ $role_user = "Admin";
 
 <aside id="sidebar">
   <ul>
-    <li><a href="beranda.php"><i class="fa fa-home"></i> Beranda</a></li>
-    <li><a href="kontrak_bast.php"><i class="fa fa-file"></i> Daftar Kontrak dan BAST</a></li>
-    <li><a href="kelola_user.php"><i class="fa fa-user"></i> Kelola User</a></li>
-    <li><a href="pejabat_dipa.php"><i class="fa fa-briefcase"></i> Pejabat dan DIPA</a></li>
-    <li><a href="data_kegiatan.php"><i class="fa fa-calendar"></i> Kelola Data Kegiatan</a></li>
+    <li><a href="beranda.php"><img src="../../assets/image/icon/home.svg" alt="" class="icon-sidebar">Beranda</a></li>
+    <li><a href="kontrak_bast.php"><img src="../../assets/image/icon/kegiatan.svg" alt="" class="icon-sidebar">Daftar Kontrak dan BAST</a></li>
+    <li><a href="kelola_user.php"><img src="../../assets/image/icon/user.svg" alt="" class="icon-sidebar">Kelola User</a></li>
+    <li><a href="pejabat_dipa.php"><img src="../../assets/image/icon/user.svg" alt="" class="icon-sidebar">Pejabat dan DIPA</a></li>
+    <li><a href="data_kegiatan.php"><img src="../../assets/image/icon/kegiatan.svg" alt="" class="icon-sidebar">Kelola Data Kegiatan</a></li>
     <li class="menu-item toggle-submenu">
-      <span><i class="fa fa-building"></i><span style="margin-left: 10px;">Kelola Data Mitra</span></span>
+      <span><img src="../../assets/image/icon/mitra.svg" alt="" class="icon-sidebar"><span>Kelola Data Mitra</span></span>
       <ul class="submenu">
         <li><a href="mitra_sobat.php">Mitra Sobat</a></li>
         <li><a href="mitra_lainnya.php">Mitra Lainnya</a></li>
       </ul>
     </li>
     <li class="menu-item toggle-submenu">
-      <span><i class="fa fa-database"></i><span style="margin-left: 10px;">Kelola Data Umum</span></span>
+      <span><img src="../../assets/image/icon/umum.svg" alt="" class="icon-sidebar"><span>Kelola Data Umum</span></span>
       <ul class="submenu">
         <li><a href="data_teknis.php">Data Teknis</a></li>
         <li><a href="data_pegawai.php">Data Pegawai</a></li>
@@ -226,8 +233,8 @@ $role_user = "Admin";
         <li><a href="data_satuan.php">Data Satuan</a></li>
       </ul>
     </li>
-    <li><a href="kelola_template.php"><i class="fa fa-file-lines"></i> Kelola Template</a></li>
-    <li><a href="../index.php"><i class="fa fa-right-from-bracket"></i> Logout</a></li>
+    <li><a href="kelola_template.php"><img src="../../assets/image/icon/template.svg" alt="" class="icon-sidebar">Kelola Template</a></li>
+    <li><a href="../index.php"><img src="../../assets/image/icon/logout.svg" alt="" class="icon-sidebar">Logout</a></li>
   </ul>
 </aside>
 
