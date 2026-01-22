@@ -5,16 +5,7 @@
   <title>Data Kegiatan - SIKOBA</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-  <style>
-    body { background-color: #f5f5f5; }
-    .navbar-custom { background-color: #2e357b; color: white; }
-    .table thead { background-color: #2e357b; color: white; }
-    .icon-btn { border: none; background: none; font-size: 1.2rem; }
-    .icon-view { color: #0066ff; }
-    .icon-add { color: #00ccff; }
-    .icon-delete { color: #ff4444; }
-    .title { font-weight: bold; font-size: 1.5rem; margin-bottom: 1rem; }
-  </style>
+  <link rel="stylesheet" href="/sikoba/assets/css/admin/data_kegiatan.css">
 </head>
 <body>
 
@@ -26,12 +17,12 @@
   <div class="container mt-4">
     <div class="title">Data Kegiatan</div>
   
-    <!-- Search and Add Button -->
-    <div class="d-flex justify-content-between mb-3">
-      <input type="text" class="form-control w-25" placeholder="Cari Data Kegiatan">
-      <button class="btn btn-primary">+ Tambah Data</button>
-    </div>
-  
+  <!-- Search and Add Button -->
+  <div class="d-flex justify-content-between mb-3">
+    <input type="text" class="form-control w-25" placeholder="Cari Data Kegiatan">
+    <a href="../../view/admin/tambah_data_kegiatan.php" class="btn btn-primary">+ Tambah Data</a>
+  </div>
+
     <?php
       $data = [
         ["statistik sosial", "Susenas", "Listing dan pendataan lapang"],

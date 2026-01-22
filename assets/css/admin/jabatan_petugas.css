@@ -1,0 +1,84 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background-color: #ffffff;
+  }
+
+  .container {
+    padding: 40px;
+  }
+
+  h2 {
+    font-size: 24px;
+    color: #30387B;
+    margin-bottom: 20px;
+  }
+
+  .search-add {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: space-between;
+  }
+
+  .search-add input {
+    padding: 10px 16px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+
+  .search-add button {
+    background-color: #2C2F7C;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+  }
+
+  th, td {
+    border: 1px solid #ccc;
+    padding: 14px;
+    text-align: center;
+  }
+
+  th {
+    background-color: #2C2F7C;
+    color: white;
+    font-weight: 600;
+  }
+
+  .action-icons button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 0 5px;
+    font-size: 18px;
+  }
+
+  .action-icons .detail {
+    color: #0056D2;
+  }
+
+  .action-icons .add {
+    color: #00B8D9;
+  }
+
+  .action-icons .delete {
+    color: #FF4D4D;
+  }
+
+  .sidebar-toggle {
+    display: inline-block;
+    font-size: 24px;
+    margin-right: 20px;
+    cursor: pointer;
+  }

@@ -20,17 +20,7 @@ $dummy_users = [
   <meta charset="UTF-8">
   <title>Kelola User - SIKOBA</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    body { background-color: #f5f5f5; }
-    .navbar-custom { background-color: #2e357b; color: white; }
-    .table thead { background-color: #2e357b; color: white; }
-    .table td, .table th { vertical-align: middle; }
-    .icon-btn { border: none; background: none; font-size: 1.2rem; }
-    .icon-view { color: #0066ff; }
-    .icon-add { color: #00ccff; }
-    .icon-delete { color: #ff4444; }
-    .title { font-weight: bold; font-size: 1.5rem; margin-bottom: 1rem; }
-  </style>
+  <link rel="stylesheet" href="/sikoba/assets/css/admin/kelola_user.css">
 </head>
 <body>
 
@@ -57,7 +47,7 @@ $dummy_users = [
           <th>Teknis</th>
           <th>Username</th>
           <th>Password</th>
-          <th>Level</th>
+          <th>Role</th>
           <th>Aksi</th>
         </tr>
       </thead>

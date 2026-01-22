@@ -5,82 +5,7 @@
   <meta charset="UTF-8">
   <title>Kelola Template - SIKOBA</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    body {
-      background-color: #fff;
-    }
-
-    .container {
-      padding: 40px;
-    }
-
-    h2 {
-      color: #2C2F7C;
-      margin-bottom: 20px;
-      font-size: 22px;
-    }
-
-    .controls {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 15px;
-    }
-
-    .controls select {
-      padding: 6px;
-      border-radius: 5px;
-    }
-
-    .add-btn {
-      background-color: #2C2F7C;
-      color: white;
-      border: none;
-      padding: 10px 18px;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    table th, table td {
-      border: 1px solid #ccc;
-      padding: 12px;
-      text-align: center;
-    }
-
-    table th {
-      background-color: #2C2F7C;
-      color: white;
-    }
-
-    .action-icons {
-      display: flex;
-      gap: 10px;
-      justify-content: center;
-    }
-
-    .action-icons a {
-      color: white;
-      padding: 6px;
-      border-radius: 4px;
-      text-decoration: none;
-    }
-
-    .detail { background-color: #007bff; }
-    .edit { background-color: #00bcd4; }
-    .delete { background-color: #f44336; }
-  </style>
+  <link rel="stylesheet" href="/sikoba/assets/css/admin/kelola_template.css">
 </head>
 <body>
 
@@ -124,7 +49,7 @@
             echo "<td class='action-icons'>
                     <a class='detail' href='#'>📄</a>
                     <a class='edit' href='#'>📑</a>
-                    <a class='delete' href='#'>🗑️</a>
+                    <a class='delete' href='x#'>🗑️</a>
                   </td>";
             echo "</tr>";
             $i++;

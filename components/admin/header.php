@@ -4,197 +4,65 @@ $role_user = "Admin";
 ?>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+<link rel="stylesheet" href="../../assets/css/style.css">
 <style>
-
-  body::-webkit-scrollbar {
-      display: none;
+  /* Tambahan untuk dropdown user */
+  .user-dropdown {
+    position: relative;
+    display: inline-block;
+    text-align: left;
   }
 
-  header {
-    background: linear-gradient(to right, #1f2b6c, #2e4aad);
+  .dropdown-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
     color: white;
-    padding: 15px 30px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: fixed;
-    z-index: 1101;
-    top: 0;
-    left: 0;
-    width: 100%;
-  }
-
-  .logo-area {
-    display: flex;
-    align-items: center;
-  }
-
-  .logo-area img {
-    height: 100px;
-    margin-right: 15px;
-  }
-
-  .logo-area h1 {
-    font-size: 22px;
-    line-height: 1.1;
-    margin: 0;
-  }
-
-  .logo-area span {
-    font-size: 18px;
-    font-weight: bold;
-  }
-
-  .right-header{
-    margin-right: 50px;
-    text-align: end;
-  }
-
-  .right-header .user {
     font-size: 16px;
-  }
-
-  .right-header .user i {
-    font-size: 20px;
-    margin-right: 6px;
-  }
-
-  .hamburger-menu {
-    width: 30px;
-    height: 25px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    cursor: pointer;
-    margin-right: 20px;
-  }
-
-  .hamburger-menu .bar {
-    height: 4px;
-    width: 100%;
-    background-color: white;
-    border-radius: 2px;
-    transition: 0.4s;
-  }
-
-  .hamburger-menu.active .bar:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-  }
-
-  .hamburger-menu.active .bar:nth-child(2) {
-    opacity: 0;
-  }
-
-  .hamburger-menu.active .bar:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -6px);
-  }
-
-  aside {
-    width: 250px;
-    background-color: #1d2a7a;
-    color: white;
-    height: 100%;
-    padding: 120px 20px 20px; /* padding-top disesuaikan agar tidak tertutup header */
-    position: fixed;
-    top: 0;
-    left: -300px;
-    transition: left 0.3s ease;
-    z-index: 1000;
-    overflow-y: auto;
-  }
-
-  aside.active {
-    left: 0;
-  }
-
-  aside ul {
-    list-style: none;
     padding: 0;
-    margin: 0;
   }
 
-  aside ul li {
-    margin: 15px 0;
+  .dropdown-btn i {
+    margin-right: 6px;
+    font-size: 20px;
   }
 
-  aside ul li a {
-    display: flex;
-    align-items: center;
-    color: white;
-    text-decoration: none;
+  .dropdown-btn .arrow {
+    margin-left: 5px;
+    font-size: 12px;
   }
 
-  aside ul li i {
-    margin-right: 10px;
-  }
-
-  .menu-item {
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .submenu {
+  .dropdown-content {
     display: none;
-    margin-top: 10px;
-    padding-left: 28px;
-    background: #2e3b9c;
-    border-left: 2px solid white;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    min-width: 130px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 1102;
+    border-radius: 6px;
+    overflow: hidden;
   }
 
-  .submenu li {
-    margin: 5px 0;
-  }
-
-  .submenu a {
-    color: white;
+  .dropdown-content a {
+    color: black;
+    padding: 10px 15px;
     text-decoration: none;
-    padding: 5px 10px;
+    display: block;
+    font-size: 14px;
   }
 
-  .menu-item.active .submenu {
+  .dropdown-content a:hover {
+    background-color: #f0f0f0;
+  }
+
+  .dropdown-content.show {
     display: block;
   }
 
-  @media (max-width: 768px) {
-    header {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .logo-area h1 {
-      font-size: 18px;
-    }
-
-    .logo-area img {
-      height: 80px;
-    }
-
-    aside {
-      width: 220px;
-    }
+  body::-webkit-scrollbar {
+    display: none;
   }
-
-  main {
-    margin-left: 0;
-    margin-top: 130px; /* untuk memberi ruang terhadap header */
-    transition: margin-left 0.3s ease;
-    padding: 20px;
-  }
-
-  main.shifted {
-    margin-left: 290px;
-  }
-
-  .icon-sidebar{
-    max-width: 20px;
-    margin-right: 20px;
-  }
-
-  aside::-webkit-scrollbar {
-  display: none; /* Chrome, Safari */
-}
 </style>
 
 <header>
@@ -211,9 +79,14 @@ $role_user = "Admin";
     </div>
   </div>
   <div class="right-header">
-    <div class="user">
-      <i class="fas fa-user-circle"></i> Hello, <?= $nama_user ?><br>
-      <span class="role-info">Anda Login Sebagai <?= $role_user ?></span>
+    <div class="user-dropdown">
+      <button onclick="toggleDropdown()" class="dropdown-btn">
+        <i class="fas fa-user-circle"></i> Hello, <?= $nama_user ?> <span class="arrow">&#9660;</span><br>
+        <span style="font-size: 12px;">Anda Login Sebagai <?= $role_user ?></span>
+      </button>
+      <div id="dropdown-menu" class="dropdown-content">
+        <a href="../../view/admin/profil_admin.php"><i class="fas fa-user"></i> Profil</a>
+      </div>
     </div>
   </div>
 </header>
@@ -247,25 +120,4 @@ $role_user = "Admin";
   </ul>
 </aside>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const hamburger = document.querySelector('#hamburger');
-    const sidebar = document.querySelector('#sidebar');
-    const mainContent = document.querySelector('main');
-    const menuItems = document.querySelectorAll('.menu-item');
-
-    if (hamburger && sidebar) {
-      hamburger.addEventListener('click', function () {
-        hamburger.classList.toggle('active');
-        sidebar.classList.toggle('active');
-        mainContent.classList.toggle('shifted');
-      });
-    }
-
-    menuItems.forEach(item => {
-      item.addEventListener('click', function () {
-        this.classList.toggle('active');
-      });
-    });
-  });
-</script>
+<script src="../../assets/js/main.js"></script>

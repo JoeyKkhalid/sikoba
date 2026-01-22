@@ -22,15 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   <meta charset="UTF-8">
   <title>Tambah Data Teknis</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
-  <style>
-    body { font-family: 'Poppins', sans-serif; margin: 0; background-color: #fff; }
-    .container { padding: 40px; max-width: 600px; margin: auto; }
-    h2 { color: #30387B; font-size: 24px; font-weight: 700; margin-bottom: 30px; }
-    label { display: block; margin-bottom: 8px; font-weight: 500; }
-    input[type="text"] { width: 100%; padding: 10px 15px; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 25px; font-size: 16px; }
-    button { background-color: #30387B; color: #fff; padding: 10px 25px; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; }
-    button:hover { background-color: #2a3169; }
-  </style>
+  <link rel="stylesheet" href="/sikoba/assets/css/admin/tambah_teknis.css">
 </head>
 <body>
 
